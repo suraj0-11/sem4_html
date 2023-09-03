@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+ .income {
+ background-color: #0ff;
+ }
+ .expenses {
+ background-color: #f0f;
+ }
+ .profit {
+ background-color: #f00;
+ }
+ li {
+ display: inline;
+ border: medium double black;
+ list-style-type: none;
+ margin: 5px;
+ padding: 10px 20px 10px 20px;
+ }
+ li::marker {
+ content: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Circle-iconslist.svg/1200px-Circle-icons-list.svg.png);
+ }
+ </style>
+</head>
+<body>
+ <h1>The current price is <span class="income">50₹</span> and new price is <span
+class="expenses">40₹</span></h1>
+ <ul>
+ <li>Item 1</li>
+ <li>Item 2</li>
+ <li>Item 3</li>
+ </ul>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            transition: z-index 0.3s, transform 0.3s;
+        }
+
+        #image1 {
+            z-index: 1;
+            left: 0;
+            top: 0;
+        }
+
+        #image2 {
+            z-index: 2;
+            left: 50px;
+            top: 50px;
+        }
+
+        #image3 {
+            z-index: 3;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+    <title>Overlapping Images</title>
+</head>
+<body>
+    <div class="image-container">
+        <img src="image1.jpg" alt="Image 1" class="image" id="image1">
+        <img src="image2.jpg" alt="Image 2" class="image" id="image2">
+        <img src="image3.jpg" alt="Image 3" class="image" id="image3">
+    </div>
+    <script>
+        const images = document.querySelectorAll('.image');
+
+        images.forEach((image) => {
+            image.addEventListener('mouseover', (e) => {
+                // Bring the hovered image to the top by increasing its z-index
+                image.style.zIndex = 4;
+
+                // Scale the image to make it fully displayed
+                image.style.transform = 'scale(1.2)';
+            });
+
+            image.addEventListener('mouseout', (e) => {
+                // Reset the z-index and scale when the mouse leaves the image
+                image.style.zIndex = parseInt(image.style.zIndex) - 3;
+                image.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
